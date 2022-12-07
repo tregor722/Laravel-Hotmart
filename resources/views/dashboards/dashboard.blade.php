@@ -1,6 +1,6 @@
 <x-app-layout :assets="$assets ?? []">
    <div class="row">
-      <div class="col-md-12 col-lg-12">
+      {{-- <div class="col-md-12 col-lg-12">
          <div class="row row-cols-1">
             <div class="d-slider1 overflow-hidden ">
                <ul  class="swiper-wrapper list-inline m-0 p-0 mb-2">
@@ -564,6 +564,6 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> --}}
    </div>
 </x-app-layout>
