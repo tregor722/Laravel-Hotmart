@@ -29,7 +29,6 @@ Route::get('/storage', function () {
 
 //UI Pages Routs
 // Route::get('/', [HomeController::class, 'uisheet'])->name('uisheet');
-Route::get('/', [HomeController::class, 'signin'])->name('auth.signin');
 
 Route::group(['middleware' => 'auth'], function () {
     // Permission Module
@@ -38,7 +37,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('role', RoleController::class);
 
     // Dashboard Routes
+    Route::get('/', [HomeController::class, 'index'])->name('welcome');
+
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+    Route::get('/billing', [HomeController::class, 'datatable'])->name('table.datatable');
 
     // Users Module
     Route::resource('users', UserController::class);
@@ -66,5 +68,11 @@ Route::group(['prefix' => 'errors'], function() {
     Route::get('error404', [HomeController::class, 'error404'])->name('errors.error404');
     Route::get('error500', [HomeController::class, 'error500'])->name('errors.error500');
     Route::get('maintenance', [HomeController::class, 'maintenance'])->name('errors.maintenance');
+});
+
+//Table Page Routs
+Route::group(['prefix' => 'table'], function() {
+    Route::get('bootstraptable', [HomeController::class, 'bootstraptable'])->name('table.bootstraptable');
+    // Route::get('datatable', [HomeController::class, 'datatable'])->name('table.datatable');
 });
 

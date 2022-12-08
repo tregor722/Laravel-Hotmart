@@ -160,8 +160,8 @@ h6, .h6 {
 }
 
 p {
-  margin-top: 0;
-  margin-bottom: 1rem;
+
+  /* margin-bottom: 1rem; */
 }
 
 abbr[title],
@@ -18627,7 +18627,7 @@ body.offcanvas-active {
 }
 
 /*
- * Background color 
+ * Background color
  */
 .bg-soft-primary {
   color: #344ed1;

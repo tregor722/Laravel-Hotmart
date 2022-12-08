@@ -1,9 +1,7 @@
 <nav class="nav navbar navbar-expand-lg navbar-light iq-navbar">
   <div class="container-fluid navbar-inner">
-    <a href="{{route('dashboard')}}" class="navbar-brand">
 
-      <h4 class="logo-title">Robot Name</h4>
-    </a>
+      <h4 class="logo-title" style="padding-left: 30px">Robot Name</h4>
     <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
       <i class="icon">
         <svg width="20px" height="20px" viewBox="0 0 24 24">
@@ -11,15 +9,7 @@
       </svg>
       </i>
     </div>
-    <div class="input-group search-input">
-      <span class="input-group-text" id="search-input">
-        <svg width="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="11.7669" cy="11.7666" r="8.98856" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
-          <path d="M18.0186 18.4851L21.5426 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </span>
-      <input type="search" class="form-control" placeholder="Search...">
-    </div>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       <span class="navbar-toggler-icon">
@@ -56,8 +46,8 @@
             </div>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" role="button" data-setting="color-mode" data-name="color" data-value="dark">Dark Mode</a></li>
-            <li><a class="dropdown-item" role="button" data-setting="color-mode" data-name="color" data-value="light">Light Mode</a></li>
+            <li id="dark_mode"><a class="dropdown-item" role="button" data-setting="color-mode" data-name="color" data-value="dark">Dark Mode</a></li>
+            <li id="light_mode" style="display: none;"><a class="dropdown-item" role="button" data-setting="color-mode" data-name="color" data-value="light">Light Mode</a></li>
 
             <li><hr class="dropdown-divider"></li>
             <li><form method="POST" action="{{route('logout')}}">
@@ -75,5 +65,6 @@
     </div>
   </div>
 </nav>
+
 
 

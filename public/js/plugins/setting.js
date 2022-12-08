@@ -64,7 +64,7 @@ Index Of Script
         if(data == 'noClass'){
             const dataREmove = `[data-setting="${type}"][data-name="${name}"]`;
             const dataAdd = `[data-setting="${type}"][data-name="${name}"][data-value="${value}"]`;
-            
+
             document.querySelectorAll(dataREmove).forEach((el) => {
                 el.classList.remove('active')
             });
@@ -89,6 +89,14 @@ Index Of Script
     const changeMode = (type, value, target) => {
         let detailObj = {}
         if (type == 'color-mode') {
+            if(value == 'dark') {
+                $('#dark_mode').hide();
+		        $('#light_mode').show();
+            }
+            else {
+                $('#dark_mode').show();
+		        $('#light_mode').hide();
+            }
             detailObj = {dark: value}
             document.querySelector('body').classList.add(value)
         }
@@ -97,7 +105,7 @@ Index Of Script
             document.querySelector('html').setAttribute('dir',value)
         }
         if (type == 'sidebar') {
-            detailObj = {'sidebar-color': value}            
+            detailObj = {'sidebar-color': value}
            const sidebarclass= document.querySelector('.sidebar-default')
            if(sidebarclass !== null && sidebarclass !== undefined){
                 sidebarclass.classList.add(value)
@@ -208,7 +216,7 @@ Index Of Script
             }
         })
     })
-    
+
     //Sidebar Color
     const sidebarColors = document.querySelectorAll('[data-setting="sidebar"][data-name="sidebar-color"]')
     Array.from(sidebarColors, (mode) => {
@@ -258,7 +266,7 @@ Index Of Script
         })
     })
 
-    //Sidebar Active Style 
+    //Sidebar Active Style
     const allActiveType = document.querySelectorAll('[data-setting="sidebar"][data-name="sidebar-item"]')
     Array.from(allActiveType, (activeStyle) => {
         activeStyle.addEventListener('click', (e) => {
@@ -299,7 +307,7 @@ Index Of Script
             sessionStorage.setItem('navbarTypes', '')
         })
     }
-   
+
     // For colorChange Mode
     const customizerMode = (custombodyclass,colors,colorInfo) => {
     document.querySelector('body').classList.add(`${custombodyclass}`)
@@ -335,22 +343,22 @@ Index Of Script
         })
         sessionStorage.setItem('colorcustom-mode', mode.getAttribute('data-value'))
         sessionStorage.setItem('colorcustominfo-mode', mode.getAttribute('data-info'))
-        
+
         mode.classList.add('active')
         const colors = mode.getAttribute('data-info');
         const color = getComputedStyle(document.body).getPropertyValue('--bs-primary');
         customizerMode(mode.getAttribute('data-value'),colors,color)
-        
+
         })
     })
-    
+
     const custombodyclass = sessionStorage.getItem('colorcustom-mode')
     const colors = sessionStorage.getItem('colorcustominfo-mode')
     const color = sessionStorage.getItem('colorcustomchart-mode')
     if(custombodyclass !== null && custombodyclass !== undefined && colors !== null && colors !== undefined){
-        customizerMode(custombodyclass,colors,color)     
+        customizerMode(custombodyclass,colors,color)
     }
 
-    
+
 
 })()

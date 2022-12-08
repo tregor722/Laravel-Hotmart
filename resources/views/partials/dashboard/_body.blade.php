@@ -8,7 +8,7 @@
     {{-- @include('partials.dashboard.sub-header') --}}
     </div>
 
-    <div class="conatiner-fluid content-inner mt-n5 py-0">
+    <div class="conatiner-fluid content-inner mt-5">
     {{ $slot }}
     </div>
 
