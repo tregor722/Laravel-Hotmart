@@ -4,11 +4,14 @@
       <div class="card   rounded">
          <div class="card-body">
             <div class="row">
-               <div class="col-sm-12">
-                  <h4 class="mb-2">Invoice  #215462</h4>
-                  <h5 class="mb-3">Hello , Devon Lane </h5>
-                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-               </div>
+               <div class="col-sm-12 d-flex justify-content-between">
+                  <h5 class="mb-3">Billing History </h5>
+                  <div class="d-flex mb-3 align-items-center">
+                    <h6 style="margin-right: 5px;">Next Billing: </h6>
+                    <p style="font-size: small;"> 10 USD (10 Ago 2022)</p>
+                    <a style="margin-left: 10px" href="">Cancel</a >
+                  </div>
+                </div>
             </div>
             <div class="row">
                <div class="col-sm-12 mt-4">
